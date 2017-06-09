@@ -1,0 +1,13 @@
+{
+  "name": "interview-scheduler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "jade": "^1.11.0",
+    "serve-favicon": "^2.4.3"
+  }
+}
