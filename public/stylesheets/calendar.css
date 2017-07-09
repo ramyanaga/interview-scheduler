@@ -1,5 +1,28 @@
 .panel {
-    font-family:'Anton', sans-serif;
-    padding-left: 50px;
-    margin-right: 50px;
+    border-radius: 25px;
+    background: #B0E0E6;
+    margin-left: 70px;
+    margin-right: 70px;
+    margin-top: 50px;
+    height: 100px;
+
+}
+
+.panel-body {
+    position: absolute;
+    font-family: 'Armata', sans-serif;
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+#time {
+    position: absolute;
+    float: left;
+    margin-left: 100px;
+}
+
+#student-name {
+    position: absolute;
+    float: : right;
+    margin-left: 400px;
 }
