@@ -11,6 +11,11 @@ nav {
 
 }
 
+nav .title {
+    color: #FFFFFF;
+    float: left;
+}
+
 nav .links {
     float: right;
 }
