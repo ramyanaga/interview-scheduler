@@ -6,7 +6,7 @@ var session = require('express-session');
 router.use(bodyParser.json());
 
 router.get('/', function(req, res) {
-    res.send('Interview Scheduler!')
+    res.render('home');
 });
 
 router.get('/calendar', function(req, res) {
