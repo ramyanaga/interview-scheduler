@@ -22,10 +22,26 @@ router.get('/calendar', function (req, res) {
             console.log(err);
         }
         else {
-            res.send(data);
+            // throws Student.save is not a function error
+            Student.save({ time: 4, name: 'Test' });
+            getStudents();
+            //res.send(data);
             console.log("calendar view rendered");
         }
     });
 });
+
+//not finding students, which means not connected to correct db
+const getStudents = () => {
+    let students = [];
+    Student.find({}, function (err, students) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log('GOT STUDENTS: ', students);
+        }
+    });
+}
 
 module.exports = router;

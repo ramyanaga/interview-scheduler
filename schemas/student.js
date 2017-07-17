@@ -10,5 +10,5 @@ var studentSchema = new mongoose.Schema({
 });
 
 // may need plugin??
-var studentSchema = mongoose.model('student', studentSchema);
+var studentSchema = mongoose.model('Student', studentSchema);
 module.exports = studentSchema;

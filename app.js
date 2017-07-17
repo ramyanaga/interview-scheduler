@@ -10,12 +10,8 @@ var routes = require('./routes/index');
 
 var app = express();
 
-/*
-app.get('/', function(req, res) {
-    res.send('Interview Scheduler!')
-});
-*/
-
+// mongoose connection, currently connected to localdb
+// not sure if this is connected correctly
 mongoose.connect("localhost:27017/data/db")
 var connection = mongoose.connection;
 connection.on('error', console.error.bind(console, 'connection error:'));
@@ -46,8 +42,7 @@ app.use(function (req, res, next) {
   next(err);
 });
 
-// error handlers
-
+// error handlers -- not sure if this is working
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
