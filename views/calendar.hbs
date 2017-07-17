@@ -1,35 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title> Calendar | Interview-Scheduler </title>
-        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet">
-        <link rel="stylesheet" href ="/stylesheets/calendar.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="/js/calendar.js"></script>
 
-    </head>
+<head>
+    <title> Calendar | Interview-Scheduler </title>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Armata" rel="stylesheet">
+    <link rel="stylesheet" href="/stylesheets/calendar.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="/js/calendar.js"></script>
 
-    <body>
+</head>
 
-    <div class = "panel">
-        <div class="panel-body">
-            <div id="time"> Time </div>
-            <div id="student-name"> Student Name </div>
+<body>
+
+    <div class="students">
+        {{#each students}}
+        <div class="panel">
+            <div class="panel-body">
+                <div id="time"> Time </div>
+                <div id="student-name"> {{this}} </div>
+            </div>
         </div>
+        <div class="decision-dropdown">
+            <button class="dropbtn">Decision</button>
+            <div class="dropdown-content">
+                <a id="dropdown-yes" href="#">Yes</a>
+                <a id="dropdown-maybe" href="#">Maybe</a>
+                <a id="dropdown-no" href="#">No</a>
+            </div>
+        </div>
+        {{/each}}
     </div>
 
-    <div class="decision-dropdown">
-      <button class="dropbtn">Decision</button>
-      <div class="dropdown-content">
-        <a id="dropdown-yes" href="#">Yes</a>
-        <a id="dropdown-maybe" href="#">Maybe</a>
-        <a id="dropdown-no" href="#">No</a>
-      </div>
-    </div>
-
-    </body>
+</body>
 
 </html>
-
