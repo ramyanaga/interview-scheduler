@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 var session = require('express-session');
+var Student = require('../schemas/student');
 
 router.use(bodyParser.json());
 
