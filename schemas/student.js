@@ -6,7 +6,7 @@ var mongoose = require('mongoose'),
 
 var studentSchema = new mongoose.Schema({
     time: { type: Number, required: true },
-    student: { type: String, required: true }
+    name: { type: String, required: true }
 });
 
 // may need plugin??

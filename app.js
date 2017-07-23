@@ -12,16 +12,36 @@ var app = express();
 
 // mongoose connection, currently connected to localdb
 // not sure if this is connected correctly
-mongoose.connect("localhost:27017/data/db")
-var connection = mongoose.connection;
-connection.on('error', console.error.bind(console, 'connection error:'));
+//mongoose.connect("localhost:27017/data/db")
+//mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/interview-scheduler');
+
+mongoose.connect('mongodb://localhost/interview-scheduler', {
+  useMongoClient: true,
+}, function(err) {
+  if (err) {
+    throw err;
+  }
+  else {
+    console.log('db connected');
+  }
+});
+
+
+var testdb = mongoose.connection;
+testdb.on('error', console.error.bind(console, 'connection error:'));
+/*
 connection.on('connected', function () {
   console.log('database connected!');
+});
+*/
+testdb.once('open', function() {
+  console.log('were connected!');
 });
 
 // view engine setup
 app.set('views', dirPath.join(__dirname, 'views'));
 //var Handlebars = require('handlebars');
+//Handlebars.registerPartial('navbar', '{{navbar}}')
 var exphbs = require('express-handlebars');
 app.engine('.hbs', exphbs({ extname: '.hbs' }));
 app.set('view engine', '.hbs');
